@@ -1,0 +1,13 @@
+<nav class="header-nav" id="menu">
+	<div class="logo">
+		<a href="#/"><!-- <ng-include src="'img/logo.svg'"></ng-include> -->芪闻异事{{item.page}}</a>
+	</div>
+	<div ng-if="menuList.toggle" class="menu">
+		<ul>
+			<li ng-repeat="item in menuList.list">
+				<a ui-sref-active="active" ui-sref="{{item.url}}">{{item.page}}</a>
+			</li>
+		</ul>
+	</div>
+	<div class="menu-btn" ng-click="menuList.toggle = !menuList.toggle"><span ng-class="{'active': menuList.toggle}"></span></div>
+</nav>

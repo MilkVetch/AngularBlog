@@ -1,0 +1,121 @@
+.header-nav
+	display: none
+	+bp(max, 960px)
+		display: block
+		position: fixed
+
+		+size(100%, 100%)
+		max-width: 480px
+
+		.logo
+			position: absolute
+			z-index: 999
+			display: none
+			top: 20px
+			right: 20px
+			+bp(max, 550px)
+				display: block
+			a
+				display: block
+				width: 50px
+				font-size: 50px
+				word-wrap: break-word
+				text-decoration: none
+				font-family: STXingkai
+				font-weight: bold
+				color: #222
+
+		.menu-btn
+			+size(50px)
+			cursor: pointer
+			background:
+				image: url(../img/menu.png)
+				size: 100% 100%
+			position: absolute
+			z-index: 999
+			bottom: 20px
+			right: 20px
+
+			span
+				+size(20px, 3px)
+				background-image: url(../img/span.png)
+				+centerer
+				&:after,&:before
+					content: ''
+					+size(20px, 3px)
+					background-image: url(../img/span.png)
+					position: absolute
+					display: block
+					transition: all 0.3s ease
+				&:after
+					top: 5px
+				&:before
+					top: -5px
+
+			span.active
+				background-image: none
+				&:after
+					top: 0px
+					transform: rotate(45deg)
+				&:before
+					top: 0px
+					transform: rotate(-45deg)
+
+
+		.menu
+			position: absolute
+			z-index: 998
+			+size(100%)
+			box-sizing: border-box
+			background:
+				image: url(../img/mBack.png)
+				size: cover
+
+			+bp(max, 550px)
+				padding-right: 70px
+			ul
+
+				list-style: none
+				display: flex
+				flex-direction: row-reverse
+				flex-wrap: wrap
+
+				li
+					margin-right: 20px
+					margin-top: 30px
+
+					a
+						text-decoration: none
+						color: #222
+						display: block
+						width: 20px
+						font-size: 20px
+						word-wrap: break-word
+						position: relative
+
+						&:hover
+							&:before
+								content: ''
+								+size(20px, 1px)
+								background-color: #222
+								display: block
+								position: absolute
+								top: -8px
+
+		.menu.ng-enter
+			transition: 0.3s ease all
+			opacity: 0
+			transform: translateX(100%)
+
+		.menu.ng-enter.ng-enter-active
+			opacity: 1
+			transform: translateX(0)
+
+		.menu.ng-leave
+			transition: 0.3s ease all
+			opacity: 1
+			transform: translateX(0)
+
+		.menu.ng-leave.ng-leave-active
+			opacity: 0
+			transform: translateX(-100%)
