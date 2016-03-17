@@ -1,3 +1,3 @@
 # Simple-Blog
 Test Blog using AngularJS
-http://milkvetch.github.io/Simple-Blog
+http://milkvetch.github.io/AngularBlog
